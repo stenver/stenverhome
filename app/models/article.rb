@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-  validate title: presence
-  validate text: presence
+  validates :user_id, presence: true
+  validates :title, presence: true
+  validates :text, presence: true
 end

@@ -5,9 +5,6 @@ class PublicController < ApplicationController
   def coolStuff
   end
 
-  def experience
-  end
-
   def about
   end
 

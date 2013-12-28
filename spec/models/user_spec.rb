@@ -73,4 +73,21 @@ describe User do
     before { user.toggle(:admin) }
     it { should be_admin }
   end
+
+  describe "article associations" do
+    before do
+      FactoryGirl.create(:article, user: user)
+      FactoryGirl.create(:article, user: user)
+      user.save
+    end
+
+    it "should destroy associated articles" do
+      articles = user.articles.to_a
+      user.destroy
+      expect(articles).not_to be_empty
+      articles.each do |article|
+        expect(Article.where(id: article.id)).to be_empty
+      end
+    end
+  end
 end

@@ -16,20 +16,28 @@ ActiveRecord::Schema.define(version: 20131226094609) do
   create_table "articles", force: true do |t|
     t.string   "text"
     t.string   "title"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "articles", ["user_id", "created_at"], name: "index_articles_on_user_id_and_created_at"
+
   create_table "comments", force: true do |t|
     t.string   "text"
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "parent_comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["article_id", "created_at"], name: "index_comments_on_article_id_and_created_at"
+  add_index "comments", ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "privileges"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
