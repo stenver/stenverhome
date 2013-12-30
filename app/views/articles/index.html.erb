@@ -1,0 +1,9 @@
+<% provide(:title, 'News') %>
+<div class="container">
+<%= will_paginate %>
+
+<ul class="list-row">
+  <%= render @articles %>
+</ul>
+<%= will_paginate %>
+</div>

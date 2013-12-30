@@ -1,0 +1,11 @@
+<% provide(:title, @article.title) %>
+<div class="container">
+<h2><%= @article.title %> </h2>
+<p><%= simple_format @article.text %> </p>
+<span class="timestamp">
+Last updated <%= time_ago_in_words(@article.updated_at) %> ago</p>
+</span>
+<ul class="list-row">
+  <%= render @comments %>
+</ul>
+</div>

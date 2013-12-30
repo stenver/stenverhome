@@ -1,0 +1,6 @@
+<li>
+  <%= link_to comment.user.name, comment.user %>: <%= comment.text %>
+  <span class="timestamp">
+    posted <%= time_ago_in_words(comment.updated_at) %></p>
+  </span>
+</li>
