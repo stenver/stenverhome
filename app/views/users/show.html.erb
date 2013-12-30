@@ -5,8 +5,11 @@
       <h1>
         <%= @user.name %>
       </h1>
-       <p><%= link_to "Edit", edit_user_path(@user) %></p>
-       <p><%= link_to "See all users", users_path %></p>
+       <div class="user_options">
+         <span><%= link_to "Edit", edit_user_path(@user) %></span> </br>
+         <span><%= link_to "See all users", users_path %></span> </br>
+         <span><%= link_to "Create an article", new_article_path %></span> </br>
+       </div>
     </section>
   </aside>
 </div>

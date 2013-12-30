@@ -27,11 +27,11 @@ describe "Edit page" do
 
     describe "trying to access other users edit page" do
       before { visit edit_user_path(wrong_user) }
-      it { should have_title("Stenver Jerkku | Blog") }
+      it { should have_title("Stenver Jerkku | News") }
     end
   end
-  
-  describe "for correct signed in users" do 
+
+  describe "for correct signed in users" do
     before do
       sign_in user
       visit edit_user_path(user)

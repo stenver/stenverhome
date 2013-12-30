@@ -11,8 +11,14 @@ FactoryGirl.define do
   end
 
   factory :article do
-  	title "My test article"
-  	text "Lorem Ipsum"
+  	sequence(:title) { |n| "My test article" }
+  	sequence(:text) { |n| "Lorem Ipsum" }
   	user
+  end
+
+  factory :comment do
+    sequence(:text) { |n| "My Comment Text" }
+    user
+    article
   end
 end

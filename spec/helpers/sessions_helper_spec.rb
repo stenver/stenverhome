@@ -1,15 +1,5 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the SessionsHelper. For example:
-#
-# describe SessionsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 describe SessionsHelper do
 	before do
 		@user = FactoryGirl.create(:user)
@@ -24,7 +14,7 @@ describe SessionsHelper do
 			@user.remember_token.should eq(User.encrypt(token))
 			helper.current_user.id.should eq(@user.id)
 
-		end		
+		end
 	end
 
 	describe "Sign_out" do
@@ -48,13 +38,13 @@ describe SessionsHelper do
 
 		describe "for signed in users " do
 			before { helper.sign_in(@user) }
-			it { helper.signed_in?.should eq(true)}		
+			it { helper.signed_in?.should eq(true)}
 		end
 	end
 
 	describe "current_user= "do
 		before { helper.current_user=(@user) }
-		it { helper.current_user.id.should eq(@user.id) }	
+		it { helper.current_user.id.should eq(@user.id) }
 	end
 
 	describe "current_user" do
@@ -70,7 +60,7 @@ describe SessionsHelper do
 			 helper.current_user.remember_token.should eq(User.encrypt(cookies[:remember_token]))
 			end
 		end
-	end	
+	end
 
 	describe "current_user?" do
 		before { helper.sign_in(@user) }
@@ -86,7 +76,7 @@ describe SessionsHelper do
 	end
 
 	describe "redirect_back_or(default)" do
-		pending "find out whats wrong"
+		pending "TODO http://stackoverflow.com/questions/20789062/testing-controller-helper-redirect-in-rails/20791540?noredirect=1#20791540"
 	#	describe "without stored location" do
 	#		expect(helper.redirect_back_or("/")).to redirect_to(user_path(root_url))
 	#	end
@@ -96,9 +86,9 @@ describe SessionsHelper do
 #				helper.request.path = users_path
 #				helper.store_location
 #			end
-#			it do 
+#			it do
 #				expect(helper.redirect_back_or(user_path(@user))).to redirect_to(users_url)
-#				helper.session[:return_to].should eq(nil)	
+#				helper.session[:return_to].should eq(nil)
 #			end
 #		end
 	end
