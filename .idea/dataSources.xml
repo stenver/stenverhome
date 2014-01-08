@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1463491658">
+  <component name="DataSourceManagerImpl" format="xml" hash="979373210">
     <data-source source="LOCAL" name="Rails stenverHome: development" uuid="29500b75-d791-45e9-9f49-1cd2cd780174">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
@@ -10,7 +10,13 @@
     <data-source source="LOCAL" name="Rails stenverHome: test" uuid="026b00d5-534b-4e2f-8c20-a884f91954d8">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:db/test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails stenverHome: production" uuid="6e6b552c-efbc-41dd-94c5-48be6d03644c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/production.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

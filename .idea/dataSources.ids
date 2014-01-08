@@ -6,4 +6,7 @@
   <data-source source="LOCAL" name="Rails stenverHome: test" uuid="026b00d5-534b-4e2f-8c20-a884f91954d8">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails stenverHome: production" uuid="6e6b552c-efbc-41dd-94c5-48be6d03644c">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

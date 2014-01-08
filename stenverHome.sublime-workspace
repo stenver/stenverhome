@@ -39,17 +39,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "require 'spec_helper'\n\ndescribe \"Sign in page\" do\n  subject { page }\n  before { visit signin_path }\n\n  it \"is correct page\" do\n  	should have_content(\"Sign In\") 	\n  end\n\n  describe \"with invalid information\" do\n  	before { click_button \"Sign in\" }\n  	it { should have_title('Stenver Jerkku | Sign In')}\n  	it { should have_selector('div.alert.alert-error') }\n  end\n\n  describe \"with valid information\" do\n  	before do\n  		@user = FactoryGirl.create(:user)\n      @user.save\n  		l_in \"Email\", with: @user.email\n  		l_in \"Password\", with: @user.password\n	  	click_button \"Sign in\" \n  	end\n    it { should_not have_selector('div.alert.alert-error') }\n  	it { should have_title(\"Stenver Jerkku | \" + @user.name)}\n\n    describe \"followed by signout\" do\n      before do\n        click_link \"Sign out\" \n      end\n      it { should_not have_link(\"Sign out\")}\n    end\n  end\nend\n",
-			"file": "spec/views/sessions/new.html.erb_spec.rb",
-			"file_size": 873,
-			"file_write_time": 130325338691512707,
-			"settings":
-			{
-				"buffer_size": 867,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -78,32 +67,26 @@
 	},
 	"file_history":
 	[
-		"/home/stenver/stenverHome/app/views/sessions/new.html.erb",
-		"/home/stenver/stenverHome/app/helpers/sessions_helper.rb",
-		"/home/stenver/stenverHome/app/controllers/sessions_controller.rb",
-		"/home/stenver/stenverHome/app/views/users/show.html.erb",
-		"/home/stenver/stenverHome/spec/views/articles/new.html.erb_spec.rb",
-		"/home/stenver/stenverHome/node_modules/mocha/node_modules/glob/node_modules/inherits/inherits.js",
-		"/home/stenver/stenverHome/tmp/cache/assets/development/sass/1047fd6307535b40cfd5b4b4f3b498e06b9426d4/_pagination.scssc",
-		"/home/stenver/stenverHome/.idea/uiDesigner.xml",
-		"/home/stenver/stenverHome/node_modules/mocha/node_modules/glob/node_modules/minimatch/node_modules/sigmund/sigmund.js",
-		"/home/stenver/stenverHome/config/initializers/backtrace_silencers.rb",
-		"/home/stenver/stenverHome/app/controllers/articles_controller.rb",
-		"/home/stenver/stenverHome/app/views/layouts/application.html.erb",
+		"/home/stenver/SaleMove/iCameToWork",
 		"/home/stenver/stenverHome/app/views/articles/new.html.erb",
 		"/home/stenver/stenverHome/app/views/shared/_error_messages.html.erb",
 		"/home/stenver/stenverHome/app/views/users/new.html.erb",
+		"/home/stenver/stenverHome/app/controllers/articles_controller.rb",
+		"/home/stenver/stenverHome/app/controllers/sessions_controller.rb",
 		"/home/stenver/stenverHome/app/controllers/users_controller.rb",
 		"/home/stenver/stenverHome/app/assets/stylesheets/wmd.css",
 		"/home/stenver/stenverHome/app/assets/javascripts/wmd.js",
 		"/home/stenver/stenverHome/app/assets/javascripts/showdown.js",
+		"/home/stenver/stenverHome/app/views/layouts/application.html.erb",
 		"/home/stenver/stenverHome/app/views/layouts/_header.html.erb",
 		"/home/stenver/stenverHome/spec/controllers/articles_controller_spec.rb",
 		"/home/stenver/stenverHome/app/controllers/application_controller.rb",
+		"/home/stenver/stenverHome/spec/views/articles/new.html.erb_spec.rb",
 		"/home/stenver/stenverHome/config/routes.rb",
 		"/home/stenver/stenverHome/spec/controllers/sessions_controller_spec.rb",
 		"/home/stenver/stenverHome/spec/views/users/new.html.erb_spec.rb",
 		"/home/stenver/stenverHome/spec/views/users/show.html.erb_spec.rb",
+		"/home/stenver/stenverHome/app/views/users/show.html.erb",
 		"/home/stenver/stenverHome/spec/controllers/users_controller_spec.rb",
 		"/home/stenver/stenverHome/spec/models/user_spec.rb",
 		"/home/stenver/stenverHome/Gemfile",
@@ -147,8 +130,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"user",
-			"fill_in",
 			".articles",
 			"/wmd",
 			"/wmd-buttons",
@@ -183,43 +164,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "spec/views/sessions/new.html.erb_spec.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 867,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								477,
-								477
-							],
-							[
-								513,
-								513
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -258,7 +204,7 @@
 	{
 		"height": 0.0
 	},
-	"project": "StenverHome.sublime-project",
+	"project": "stenverHome.sublime-project",
 	"replace":
 	{
 		"height": 56.0
@@ -269,10 +215,6 @@
 		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"sessnew",
-				"spec/views/sessions/new.html.erb_spec.rb"
-			],
 			[
 				"sesscon",
 				"app/controllers/sessions_controller.rb"

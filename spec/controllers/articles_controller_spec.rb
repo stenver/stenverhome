@@ -41,9 +41,30 @@ describe ArticlesController do
   end
 
   describe "GET 'new'" do
-    it "returns http success" do
-      #get 'new'
-      #expect(response).to be_success
+    it "returns correct page" do
+      get :new
+      expect(response).to_not be_success
+      response.should redirect_to '/signin'
+    end
+
+    describe "as non admin" do
+      let(:user) { FactoryGirl.create(:user) }
+      before{ sign_in user, no_capybara: true }
+
+      it "redirects to root" do
+        get :new
+        response.should redirect_to(root_url)
+      end
+    end
+
+    describe "as admin" do
+      let(:admin) { FactoryGirl.create(:admin) }
+      before{ sign_in admin, no_capybara: true }
+
+      it "returns the correct page" do
+        get :new
+        response.should render_template :new
+      end
     end
   end
 

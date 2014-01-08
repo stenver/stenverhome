@@ -1,2 +1,31 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<% provide(:title, 'New Article') %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag    "wmd.css" %>
+  <%= javascript_include_tag "showdown.js" %>
+<% end %>
+
+<h1>New Article</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@article) do |f| %>
+      <%= render "shared/error_messages", object: @article %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :text %>
+      <div id="wmd-button-bar" class="wmd-panel"></div>
+      <br/>
+      <textarea id="wmd-input" class="wmd-panel" name="text" type="text"></textarea>
+      <br/>
+      <div id="wmd-preview" class="wmd-panel"></div>
+      <br/>
+      <%= f.label :text, id: "wmd-output", class: "wmd-panel"%>
+      <div id="wmd-output" class="wmd-panel"></div>
+
+      <%= f.submit "Create article", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<%= javascript_include_tag "wmd.js" %>

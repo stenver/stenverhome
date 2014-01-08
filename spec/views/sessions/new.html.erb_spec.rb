@@ -5,7 +5,7 @@ describe "Sign in page" do
   before { visit signin_path }
 
   it "is correct page" do
-  	should have_content("Sign In") 	
+  	should have_content("Sign In")
   end
 
   describe "with invalid information" do
@@ -20,14 +20,14 @@ describe "Sign in page" do
       @user.save
   		fill_in "Email", with: @user.email
   		fill_in "Password", with: @user.password
-	  	click_button "Sign in" 
+	  	click_button "Sign in"
   	end
     it { should_not have_selector('div.alert.alert-error') }
   	it { should have_title("Stenver Jerkku | " + @user.name)}
 
     describe "followed by signout" do
       before do
-        click_link "Sign out" 
+        click_link "Sign out"
       end
       it { should_not have_link("Sign out")}
     end
