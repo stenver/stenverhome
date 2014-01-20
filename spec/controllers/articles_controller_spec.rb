@@ -7,7 +7,6 @@ describe ArticlesController do
       get :index
       expect(response).to be_success
       response.should render_template :index
-      
     end
 
     describe "has articles" do
