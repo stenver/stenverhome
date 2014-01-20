@@ -1,12 +1,12 @@
 namespace :db do
   desc "Fill database with sample data"
   task sample_populate: :environment do
-    sample_populate_users
-    sample_populate_articles
-    sample_populate_comments
+    Rake::Task["db:sample_populate_users"].invoke
+    Rake::Task["db:sample_populate_articles"].invoke
+    Rake::Task["db:sample_populate_comments"].invoke
   end
 
-  task sample_populate_users :environment do
+  task sample_populate_users: :environment do
     User.create!(name: "Stenver",
                  email: "Stenver1010@gmail.com",
                  password: "secret",
@@ -23,7 +23,7 @@ namespace :db do
     end
   end
 
-  task sample_populate_articles :environment do
+  task sample_populate_articles: :environment do
     99.times do |n|
       title  = Faker::Name.name
       text = Faker::Lorem.paragraphs(paragraph_count = 5, supplemental = false).join('\n')
