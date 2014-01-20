@@ -32,6 +32,7 @@ describe ArticlesController do
       get :show, id: @article.id
       expect(response).to be_success
       response.should render_template :show
+      response.should render_template :show
     end
 
     it "returns article with comments" do
