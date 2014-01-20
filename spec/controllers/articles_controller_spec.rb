@@ -6,7 +6,6 @@ describe ArticlesController do
     it "renders correct page" do
       get :index
       expect(response).to be_success
-      expect(response).to be_success
       response.should render_template :index
     end
 
