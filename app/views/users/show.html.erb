@@ -6,9 +6,11 @@
         <%= @user.name %>
       </h1>
        <div class="user_options">
-         <span><%= link_to "Edit", edit_user_path(@user) %></span> </br>
-         <span><%= link_to "See all users", users_path %></span> </br>
-         <span><%= link_to "Create an article", new_article_path %></span> </br>
+        <span><%= link_to "Edit", edit_user_path(@user) %></span> </br>
+        <% if current_user.admin? %>
+          <span><%= link_to "See all users", users_path %></span> </br>
+          <span><%= link_to "Create an article", new_article_path %></span> </br>
+        <% end %>
        </div>
     </section>
   </aside>

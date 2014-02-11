@@ -10,5 +10,20 @@ describe "articles/new.html.erb" do
     end
 
     it { page.should have_title("Stenver Jerkku | New Article") }
+
+    it "It should create new article with valid data" do
+      fill_in "Title", with: "test_title"
+      fill_in "article[text]", with: "test_text"
+      expect { click_button "Create article" }.to change(Article, :count).by(1)
+    end
+
+    it "should populate article with correct data" do
+      fill_in "Title", with: "test_title"
+      fill_in "article[text]", with: "test_text"
+      click_button "Create article"
+      article = Article.last
+      article.title.should eq("test_title")
+      article.text.should eq("test_text")
+    end
   end
 end

@@ -1217,11 +1217,9 @@ Attacklab.wmdBase = function(){
 				inputBox.value = text;
 			};
 
-			if (!/markdown/.test(wmd.wmd_env.output.toLowerCase())) {
-				if (markdownConverter) {
-					inputBox.value = markdownConverter.makeHtml(text);
-					top.setTimeout(callback, 0);
-				}
+			if (markdownConverter) {
+				inputBox.value = markdownConverter.makeHtml(text);
+				top.setTimeout(callback, 0);
 			}
 			return true;
 		};

@@ -1,6 +1,6 @@
 # Build and Release Folders
-node_modules/
-log/
-tmp/
+node_modules/*
+log/*
+tmp/*
 db/development.sqlite3
 db/test.sqlite3
