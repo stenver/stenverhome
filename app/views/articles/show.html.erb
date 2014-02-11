@@ -5,6 +5,9 @@
 <span class="timestamp">
 Last updated <%= time_ago_in_words(@article.updated_at) %> ago</p>
 </span>
+<% if current_user.admin? %>
+  <span><%= link_to "Edit article", edit_article_path(@article) %></span> </br>
+<% end %>
 <ul class="list-row">
   <%= render @comments %>
 </ul>

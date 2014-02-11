@@ -75,24 +75,6 @@ describe SessionsHelper do
 		end
 	end
 
-	describe "redirect_back_or(default)" do
-		pending "TODO http://stackoverflow.com/questions/20789062/testing-controller-helper-redirect-in-rails/20791540?noredirect=1#20791540"
-	#	describe "without stored location" do
-	#		expect(helper.redirect_back_or("/")).to redirect_to(user_path(root_url))
-	#	end
-#
-#		describe "with stored location" do
-#			before do
-#				helper.request.path = users_path
-#				helper.store_location
-#			end
-#			it do
-#				expect(helper.redirect_back_or(user_path(@user))).to redirect_to(users_url)
-#				helper.session[:return_to].should eq(nil)
-#			end
-#		end
-	end
-
 	describe "store_location" do
 
 		before do
