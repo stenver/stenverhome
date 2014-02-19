@@ -60,6 +60,7 @@ gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'guard'
+  gem 'meie_mega_mooduls'
   gem 'guard-minitest'
   gem 'guard-rspec'
   gem 'guard-test'
