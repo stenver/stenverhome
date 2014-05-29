@@ -42,9 +42,6 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
 gem 'rspec'
 gem 'httparty'
 gem 'minitest'
@@ -57,8 +54,9 @@ gem 'factory_girl_rails'
 gem "faker"
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'sqlite3'
 
-group :development, :test do
+group :test do
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-rspec'
@@ -66,9 +64,8 @@ group :development, :test do
   gem 'guard-uglify'
   gem 'rb-fsevent'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
-group :production do
+group :production, :development do
   gem 'pg'
 end
