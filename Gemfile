@@ -7,6 +7,7 @@ gem 'rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
+gem 'bootstrap-sass'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
@@ -47,7 +48,6 @@ gem 'httparty'
 gem 'minitest'
 gem 'minitest-reporters'
 gem 'capybara'
-gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'factory_girl'
 gem 'factory_girl_rails'
