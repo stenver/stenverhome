@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     if signed_in?
       redirect_to root_url
     end
+    puts "lol"
+    puts "veel lol"
     @user = User.new
   end
 
