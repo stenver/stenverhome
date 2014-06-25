@@ -41,7 +41,6 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-    puts "update"
   end
 
   def destroy
